@@ -7,7 +7,9 @@
     "build:dev": "webpack",
     "build:prod": "webpack -p --env production",
     "dev-server": "webpack-dev-server",
-    "test": "jest"
+    "test": "jest",
+    "start": "node server/server.js",
+    "heroku-postbuild": "npm run build:prod"
   },
   "author": "Jem Alvarez",
   "license": "ISC",
@@ -22,6 +24,7 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.4",
     "css-loader": "^2.0.0",
+    "express": "^4.16.4",
     "jest": "^23.6.0",
     "mini-css-extract-plugin": "^0.5.0",
     "moment": "^2.22.2",
