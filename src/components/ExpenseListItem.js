@@ -3,7 +3,7 @@ import { connect } from 'react-redux'
 import { Link } from 'react-router-dom'
 import moment from 'moment'
 import numeral from 'numeral'
-import { removeExpense } from '../actions/expenses'
+import { startRemoveExpense } from '../actions/expenses'
 
 const ExpenseListItem = ({ description, amount, createdAt, id, dispatch }) => (
     <div>
@@ -17,7 +17,7 @@ const ExpenseListItem = ({ description, amount, createdAt, id, dispatch }) => (
         </p>
         <button
             onClick={() => {
-                dispatch(removeExpense({ id }))
+                dispatch(startRemoveExpense({ id }))
             }}
         >
             Remove
