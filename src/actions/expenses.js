@@ -37,3 +37,24 @@ export const editExpense = (id, updates) => ({
     id,
     updates
 })
+
+// SET_EXPENSES
+export const setExpenses = (expenses) => ({
+    type: 'SET_EXPENSES',
+    expenses
+})
+
+export const startSetExpenses = () => {
+    return (dispatch) => {
+        return database.ref('expenses').once('value').then(ss => {
+            const expenses = []
+            ss.forEach(childSs => {
+                expenses.push({
+                    id: childSs.key,
+                    ...childSs.val()
+                })
+            })
+            dispatch(setExpenses(expenses))
+        })
+    }
+}
