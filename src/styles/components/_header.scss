@@ -1,0 +1,24 @@
+.header {
+    background: darken($dark-green, 15%);
+}
+
+.header__content {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    padding: $s-size 0;
+}
+
+.header__title {
+    color: $white;
+    text-decoration: none;
+    transition: color 0.2s ease-in-out;
+
+    h1 {
+        margin: 0;
+    }
+}
+
+.header__title:hover {
+    color: darken($white, 10%);
+}
